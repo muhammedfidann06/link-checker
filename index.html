@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Link Checker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>🔗 Link Checker</h1>
+      <p class="subtitle">Paste a page URL and find out which of its links are dead.</p>
+    </header>
+
+    <form id="check-form">
+      <input type="url" id="url-input" placeholder="https://example.com" required>
+      <button type="submit" id="check-btn">Check links</button>
+    </form>
+
+    <section id="summary" class="summary hidden">
+      <div class="stat"><span id="total">0</span>found</div>
+      <div class="stat ok"><span id="ok-count">0</span>reachable</div>
+      <div class="stat slow"><span id="slow-count">0</span>slow / http</div>
+      <div class="stat broken"><span id="broken-count">0</span>unreachable</div>
+    </section>
+
+    <div id="progress" class="progress hidden">
+      <div id="progress-bar"></div>
+    </div>
+
+    <div class="filters hidden" id="filters">
+      <button data-filter="all" class="active">All</button>
+      <button data-filter="ok">Reachable</button>
+      <button data-filter="slow">Slow</button>
+      <button data-filter="broken">Unreachable</button>
+    </div>
+
+    <p id="message" class="message"></p>
+    <ul id="results" class="results"></ul>
+  </main>
+
+  <footer>
+    Made by <a href="https://github.com/muhammedfidann06">Muhammed Fidan</a>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
